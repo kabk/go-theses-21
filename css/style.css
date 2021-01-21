@@ -16,11 +16,30 @@ body {
 }
 
 .grid-cell {
-  overflow: scroll;
+  overflow: hidden;
   width: 15em;
   height: 20em;
   margin: 0.2rem;
   border-radius: 0.8rem;
+  border: 2px solid black;
+  padding: 0.5em;
+
+  background-attachment: fixed;
+  background-image: linear-gradient(
+    to right top,
+    #ffd900,
+    #ffb860,
+    #ffa7a8,
+    #ffafdf,
+    #e5bef5,
+    #cbc7fc,
+    #b5cefb,
+    #a9d3f2,
+    #95ddfc,
+    #7ee8ff,
+    #69f2fc,
+    #5ffbf1
+  );
 }
 
 .grid-cell-front {
@@ -30,9 +49,17 @@ body {
   height: 20em;
 }
 
+.cell-front__middle {
+  width: 15em;
+  height: 20em;
+  overflow: scroll;
+}
+
 .thesis-shape {
-  flex: 1 1 auto;
-  background-color: yellow;
+  height: 15em;
+  width: 100%;
+  background-color: blue;
+  border-radius: 10em;
 }
 
 .grid-cell-back {
@@ -46,7 +73,7 @@ h1 {
 }
 
 .grid-cell-front h2 {
-  color: Red;
+  color: black;
   padding: 0.5rem;
 }
 

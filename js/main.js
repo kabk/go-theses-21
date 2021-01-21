@@ -1,4 +1,4 @@
-const url = "theses-final.json";
+const url = "js/theses-final.json";
 
 fetch(url)
   .then((response) => response.json())
@@ -52,7 +52,7 @@ fetch(url)
 
       // middle DIV
       let middleDiv = document.createElement("div");
-      middleDiv.className("cell-front__middle");
+      middleDiv.className = "cell-front__middle";
 
       // Add items to FRONT
       thesisContainerFront.appendChild(fullNameHTML);
@@ -67,10 +67,6 @@ fetch(url)
 
       thesisContainerMaster.appendChild(thesisContainerFront);
       thesisContainerMaster.appendChild(thesisContainerBack);
-
-      document
-        .querySelectorAll(".grid-cell-front")
-        .forEach((cell) => (cell.style.backgroundColor = "pink"));
     });
   })
   .catch((err) =>
