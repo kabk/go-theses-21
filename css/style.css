@@ -39,12 +39,12 @@ nav a {
 }
 
 .grid-cell {
-  overflow: hidden;
+  overflow: scroll;
   width: 15em;
   height: 20em;
   margin: 0.2rem;
   border-radius: 0.8rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 0.5em;
 
   background-attachment: fixed;

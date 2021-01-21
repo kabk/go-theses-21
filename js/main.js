@@ -57,8 +57,8 @@ fetch(url)
       // Add items to FRONT
       thesisContainerFront.appendChild(fullNameHTML);
       thesisContainerFront.appendChild(middleDiv);
+      thesisContainerBack.appendChild(thesisAbstractHTML);
       middleDiv.appendChild(thesisShape);
-      middleDiv.appendChild(thesisAbstractHTML);
       thesisContainerFront.appendChild(thesisLinkHTML);
 
       document
