@@ -21,11 +21,15 @@ nav {
   justify-content: space-between;
 }
 
-a.link-about {
+nav a {
   text-decoration: none;
   font-size: 2rem;
   color: black;
   flex-basis: 39%;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .grid-container {
