@@ -50,12 +50,16 @@ fetch(url)
       let thesisAbstractHTML = document.createElement("p");
       thesisAbstractHTML.appendChild(thesisAbstract);
 
+      // middle DIV
+      let middleDiv = document.createElement("div");
+      middleDiv.className("cell-front__middle");
+
       // Add items to FRONT
       thesisContainerFront.appendChild(fullNameHTML);
-      thesisContainerFront.appendChild(thesisShape);
+      thesisContainerFront.appendChild(middleDiv);
+      middleDiv.appendChild(thesisShape);
+      middleDiv.appendChild(thesisAbstractHTML);
       thesisContainerFront.appendChild(thesisLinkHTML);
-
-      thesisContainerBack.appendChild(thesisAbstractHTML);
 
       document
         .querySelector(".grid-container")
