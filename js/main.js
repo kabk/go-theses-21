@@ -18,6 +18,10 @@ fetch(url)
       let thesisContainerMaster = document.createElement("div");
       thesisContainerMaster.className = "grid-cell";
 
+      // a div overlaping the grid-cell and creating a light shade on top
+      let thesisContainerTop = document.createElement("div");
+      thesisContainerTop.className = "grid-cell-shade";
+
       // FRONT of the cell
       let thesisContainerFront = document.createElement("div");
       thesisContainerFront.className = "grid-cell-front";

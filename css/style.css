@@ -1,4 +1,4 @@
-/* 
+/*
 TODO::
 
 - on mobile, scroll left-right
@@ -48,7 +48,7 @@ nav a {
   padding: 0.5em;
 
   background-attachment: fixed;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #ffd900,
     #ffb860,
@@ -62,7 +62,16 @@ nav a {
     #7ee8ff,
     #69f2fc,
     #5ffbf1
-  );
+  ); */
+  box-shadow:inset 0px 0px 6vh 0.5vh #d5e5ff;
+  background:linear-gradient(to bottom, #f0ffde 8%, #ff8bfe 75%);
+  background-color:#defabe;
+}
+
+/* making a semi-transparent shade on top of the card */
+.grid-cell-shade{
+  background: rgb(255,255,255);
+  background: linear-gradient(315deg, rgba(255,255,255,0.6082808123249299) 13%, rgba(195,142,93,0.4598214285714286) 26%, rgba(250,235,255,0.5550595238095238) 37%, rgba(255,253,173,0.3029586834733894) 52%, rgba(255,255,255,0.2945553221288515) 62%, rgba(235,172,255,0.22452731092436973) 93%);
 }
 
 .grid-cell-front {
@@ -81,16 +90,22 @@ nav a {
 .thesis-shape {
   height: 100%;
   width: 100%;
-  background-color: blue;
+  background-color: black;
   border-radius: 10em;
 }
 
 .grid-cell-back {
 }
 
-h1 {
+.titlecontainer {
   font-size: 2rem;
   padding-bottom: 2rem;
+  display: flex;
+
+}
+.titlecontainer > img{
+  display: block;
+  width: 5rem;
 }
 
 .grid-cell-front h2 {
