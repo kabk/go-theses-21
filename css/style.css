@@ -5,8 +5,9 @@ TODO::
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap");
 
 :root {
   --card-height: 22rem;
@@ -22,8 +23,9 @@ TODO::
 }
 
 html {
-  font-family: "Helvetica";
-  font-size: 20px;
+  /* font-family: "Helvetica"; */
+  font-family: "Heebo", sans-serif;
+  font-size: 22px;
   height: 100%;
   line-height: 1.2;
 }
@@ -37,45 +39,46 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 2rem;
   color: black;
   flex-basis: 39%;
-}
 
-h1 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.7rem;
+  font-family: "Press Start 2P", cursive;
   line-height: 1.3em;
 }
 
-article {
-  margin-top: 30px;
+.titlecontainer h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2 rem;
+  line-height: 1.3em;
+  animation: blink 1s linear infinite;
+}
+
+header {
+  margin: auto;
 }
 
 .titlecontainer {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 1.7rem;
   line-height: 1.3em;
   padding-bottom: 2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .titlecontainer > img {
   display: block;
-}
-
-.titlecontainer > img {
   height: 5rem;
 }
 
 .link-about {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.7rem;
-  line-height: 1.3em;
 }
 
 .grid-container {
@@ -192,12 +195,15 @@ article {
 }
 
 .card-front h2 {
+  font-weight: 700;
   color: black;
   padding: 0.5rem;
   text-align: center;
 }
 
 .card-front h3 {
+  font-weight: 600;
+
   padding: 0.5rem;
 }
 
@@ -215,12 +221,32 @@ a:hover {
   text-decoration: underline;
 }
 
+article {
+  max-width: 50ch;
+  line-height: 1.5;
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   nav {
     flex-direction: column;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
+
+  nav p:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+
   .titlecontainer {
     flex-direction: column;
     text-align: center;
@@ -228,10 +254,15 @@ a:hover {
   }
 
   .titlecontainer h1 {
+    margin: 1rem 0;
+    order: 2;
+  }
+
+  .titlecontainer img:nth-child(1) {
     order: 1;
   }
 
-  .titlecontainer img {
-    order: 2;
+  .titlecontainer img:nth-child(3) {
+    order: 3;
   }
 }
