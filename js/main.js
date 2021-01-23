@@ -7,28 +7,31 @@ fetch(url)
       const grid = document.querySelector(".grid-container");
 
       const {
-        Name: firstName,
-        Surname: lastName,
-        "Link to thesis on Github Pages": linkToThesis,
-        "Thesis Title": title,
-        Abstract: abstract,
+        Name: firstName = "[no first name]",
+        Surname: lastName = "[no last name]",
+        "Link to thesis on Github Pages": linkToThesis = "[no link]",
+        "Thesis Title": title = "[no title]",
+        Abstract: abstract = "[no abstract]",
       } = entry;
 
-      // create an entry for the person
-      let thesisContainerMaster = document.createElement("div");
-      thesisContainerMaster.className = "grid-cell";
+      let cardContainer = document.createElement("div");
+      cardContainer.className = "container-card";
 
-      // a div overlaping the grid-cell and creating a light shade on top
+      // create an entry for the person
+      let thesisContainerMain = document.createElement("div");
+      thesisContainerMain.className = "card";
+
+      // a div overlaping the card and creating a light shade on top
       let thesisContainerTop = document.createElement("div");
-      thesisContainerTop.className = "grid-cell-shade";
+      thesisContainerTop.className = "card-shade";
 
       // FRONT of the cell
       let thesisContainerFront = document.createElement("div");
-      thesisContainerFront.className = "grid-cell-front";
+      thesisContainerFront.className = "card-front";
 
       // Create wrapper for each person
       let thesisContainerBack = document.createElement("div");
-      thesisContainerBack.className = "grid-cell-back";
+      thesisContainerBack.className = "card-back";
 
       // Create image container for shape Path
       let thesisShape = document.createElement("div");
@@ -56,21 +59,38 @@ fetch(url)
 
       // middle DIV
       let middleDiv = document.createElement("div");
-      middleDiv.className = "cell-front__middle";
+      middleDiv.className = "card-front__middle";
 
-      // Add items to FRONT
+      cardContainer.appendChild(thesisContainerMain);
+      // Render the items in the browser
+      // thesisContainerMain.appendChild(thesisContainerTop);
       thesisContainerFront.appendChild(fullNameHTML);
       thesisContainerFront.appendChild(middleDiv);
       thesisContainerBack.appendChild(thesisAbstractHTML);
       middleDiv.appendChild(thesisShape);
       thesisContainerFront.appendChild(thesisLinkHTML);
 
-      document
-        .querySelector(".grid-container")
-        .appendChild(thesisContainerMaster);
+      grid.appendChild(cardContainer);
 
-      thesisContainerMaster.appendChild(thesisContainerFront);
-      thesisContainerMaster.appendChild(thesisContainerBack);
+      thesisContainerMain.appendChild(thesisContainerFront);
+      thesisContainerMain.appendChild(thesisContainerBack);
+
+      // document
+      //   .querySelector(".card > *")
+      //   .addEventListener("click", function (e) {
+      //     e.stopPropagation();
+      //     e.preventDefault();
+      //   });
+    });
+  })
+  .then(() => {
+    document.querySelectorAll(".container-card").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        console.log(item);
+
+        item.querySelector(".card").classList.toggle("is-flipped");
+        //handle click
+      });
     });
   })
   .catch((err) =>

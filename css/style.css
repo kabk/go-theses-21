@@ -5,14 +5,21 @@ TODO::
 
 */
 
-* {
+:root {
+  --card-height: 22rem;
+  --card-width: 15rem;
+}
+
+body * {
   box-sizing: border-box;
+  border: 1px solid red;
 }
 
 html {
   font-family: "Helvetica";
   font-size: 18px;
   height: 100%;
+  line-height: 1.2;
 }
 
 body {
@@ -32,6 +39,16 @@ nav a {
   flex-basis: 39%;
 }
 
+.titlecontainer {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+}
+.titlecontainer > img {
+  display: block;
+  width: 5rem;
+}
+
 .grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -42,37 +59,12 @@ nav a {
   height: 100%;
 }
 
-.grid-cell {
-  overflow: scroll;
-  width: 15em;
-  height: 20em;
-  margin: 0.2rem;
-  border-radius: 0.8rem;
-  /* border: 2px solid black; */
-
-  background-attachment: fixed;
-  /* background-image: linear-gradient(
-    to right top,
-    #ffd900,
-    #ffb860,
-    #ffa7a8,
-    #ffafdf,
-    #e5bef5,
-    #cbc7fc,
-    #b5cefb,
-    #a9d3f2,
-    #95ddfc,
-    #7ee8ff,
-    #69f2fc,
-    #5ffbf1
-  ); */
-  box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
-  background: linear-gradient(to bottom, #f0ffde 8%, #ff8bfe 75%);
-  background-color: #defabe;
-}
-
 /* making a semi-transparent shade on top of the card */
-.grid-cell-shade {
+.card-shade {
+  position: absolute;
+  opacity: 0.2;
+  width: var(--card-width);
+  height: var(--card-height);
   background: rgb(255, 255, 255);
   background: linear-gradient(
     315deg,
@@ -85,55 +77,86 @@ nav a {
   );
 }
 
-.grid-cell-front {
-  padding: 0.5em;
+.container-card {
+  perspective: 600px;
+  width: var(--card-width);
+  height: var(--card-height);
+}
 
+.card {
+  /* Perspective options */
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0.2rem;
+  border-radius: 0.8rem;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  background: linear-gradient(to bottom, #f0ffde 8%, #ff8bfe 75%);
+  background-color: #defabe;
+  background-attachment: fixed;
+  box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
+}
+
+.card-front {
   display: flex;
   flex-direction: column;
+}
+
+.card-front__middle {
   width: 100%;
   height: 100%;
 }
 
-.cell-front__middle {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
+.card-front a {
+  height: 7em;
 }
 
 .thesis-shape {
-  height: 100%;
   width: 100%;
+  height: 100%;
   background-color: black;
   border-radius: 10em;
 }
 
-.grid-cell-back {
+.card-back {
+  overflow: scroll;
+  transform: rotateY(180deg);
+  transform-origin: center;
 }
 
-.titlecontainer {
-  font-size: 2rem;
-  padding-bottom: 2rem;
-  display: flex;
-}
-.titlecontainer > img {
-  display: block;
-  width: 5rem;
-}
-
-.grid-cell-front h2 {
+.card-front h2 {
   color: black;
   padding: 0.5rem;
 }
 
-.grid-cell-front h3 {
+.card-front h3 {
   padding: 0.5rem;
 }
 
-.grid-cell-front h3::after {
+.card-front h3::after {
   content: " →";
 }
 
-.grid-cell a {
+.card a {
   color: black;
   text-decoration: none;
   text-align: center;

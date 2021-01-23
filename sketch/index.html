@@ -11,33 +11,22 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/theses-final.json" async defer></script>
-  <script src="js/main.js" async defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav>
-    <a href="index.html">
-      <div class="titlecontainer">
-        <img src="images/bulbasaur.gif" />
-        <h1>Choose Your Fighter 2021</h1>
-        <img src="images/chitorita.gif" />
-
-      </div>
-
-    </a>
-    <a href="about.html" class="link-about">
-      <p>About</p>
-    </a>
-  </nav>
-  <div class="grid-container">
+  <div class="scene scene--card">
+    <div class="card">
+      <div class="card__face card__face--front">front</div>
+      <div class="card__face card__face--back">back</div>
+    </div>
   </div>
+  <p>Click card to flip.</p>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+  <script src="main.js" async defer></script>
 </body>
 
 </html>
