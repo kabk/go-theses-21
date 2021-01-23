@@ -90,6 +90,10 @@ nav a {
   transform: rotateY(180deg);
 }
 
+.is-flipped .card-shade {
+  display: none;
+}
+
 /* making a semi-transparent shade on top of the card */
 .card-shade {
   z-index: 5;
