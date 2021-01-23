@@ -20,7 +20,7 @@ TODO::
 
 html {
   font-family: "Helvetica";
-  font-size: 18px;
+  font-size: 20px;
   height: 100%;
   line-height: 1.2;
 }
@@ -32,6 +32,7 @@ body {
 nav {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -49,13 +50,18 @@ nav a {
 }
 .titlecontainer > img {
   display: block;
-  width: 5rem;
+}
+
+.titlecontainer > img {
+  height: 5rem;
 }
 
 .grid-container {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   margin-bottom: 2rem;
@@ -137,7 +143,12 @@ nav a {
 }
 
 .card-front a {
-  height: 7em;
+  height: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .thesis-shape {
@@ -151,11 +162,13 @@ nav a {
   overflow: scroll;
   transform: rotateY(180deg);
   transform-origin: center;
+  padding: 1rem;
 }
 
 .card-front h2 {
   color: black;
   padding: 0.5rem;
+  text-align: center;
 }
 
 .card-front h3 {
@@ -174,4 +187,25 @@ nav a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .titlecontainer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .titlecontainer h1 {
+    order: 1;
+  }
+
+  .titlecontainer img {
+    order: 2;
+  }
 }
