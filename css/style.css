@@ -10,9 +10,12 @@ TODO::
   --card-width: 15rem;
 }
 
-body * {
+* {
   box-sizing: border-box;
-  border: 1px solid red;
+}
+
+.person-shape svg {
+  fill: yellow;
 }
 
 html {
@@ -59,10 +62,33 @@ nav a {
   height: 100%;
 }
 
+.container-card {
+  perspective: 600px;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: 0.3rem;
+}
+
+.card {
+  /* Perspective options */
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
 /* making a semi-transparent shade on top of the card */
 .card-shade {
+  z-index: 5;
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.5;
   width: var(--card-width);
   height: var(--card-height);
   background: rgb(255, 255, 255);
@@ -75,34 +101,18 @@ nav a {
     rgba(255, 255, 255, 0.2945553221288515) 62%,
     rgba(235, 172, 255, 0.22452731092436973) 93%
   );
+  pointer-events: none;
 }
 
-.container-card {
-  perspective: 600px;
-  width: var(--card-width);
-  height: var(--card-height);
-}
-
-.card {
-  /* Perspective options */
-  transition: transform 1s;
-  transform-style: preserve-3d;
-
-  position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  margin: 0.2rem;
+.card-shade,
+.card-front,
+.card-back {
   border-radius: 0.8rem;
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
 }
 
 .card-front,
 .card-back {
+  padding: 0.5rem;
   display: block;
   position: absolute;
   height: 100%;
@@ -123,7 +133,7 @@ nav a {
 
 .card-front__middle {
   width: 100%;
-  height: 100%;
+  height: 13em;
 }
 
 .card-front a {
@@ -133,8 +143,8 @@ nav a {
 .thesis-shape {
   width: 100%;
   height: 100%;
-  background-color: black;
-  border-radius: 10em;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .card-back {

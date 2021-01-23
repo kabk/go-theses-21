@@ -6,13 +6,17 @@ fetch(url)
     json.forEach((entry) => {
       const grid = document.querySelector(".grid-container");
 
-      const {
+      let {
         Name: firstName = "[no first name]",
         Surname: lastName = "[no last name]",
         "Link to thesis on Github Pages": linkToThesis = "[no link]",
         "Thesis Title": title = "[no title]",
         Abstract: abstract = "[no abstract]",
+        ShapePath = "[no path]",
       } = entry;
+
+      title === "" ? (title = "No Title :(") : 0;
+      abstract === "" ? (abstract = "No Abstract :(") : 0;
 
       let cardContainer = document.createElement("div");
       cardContainer.className = "container-card";
@@ -34,8 +38,9 @@ fetch(url)
       thesisContainerBack.className = "card-back";
 
       // Create image container for shape Path
-      let thesisShape = document.createElement("div");
+      let thesisShape = document.createElement("object");
       thesisShape.className = "thesis-shape";
+      thesisShape.setAttribute("data", ShapePath);
 
       // FULL NAME h2
       let fullName = document.createTextNode(`${firstName} ${lastName}`); // Create a text node
@@ -63,27 +68,31 @@ fetch(url)
 
       cardContainer.appendChild(thesisContainerMain);
       // Render the items in the browser
-      // thesisContainerMain.appendChild(thesisContainerTop);
+      thesisContainerMain.appendChild(thesisContainerTop);
       thesisContainerFront.appendChild(fullNameHTML);
       thesisContainerFront.appendChild(middleDiv);
       thesisContainerBack.appendChild(thesisAbstractHTML);
       middleDiv.appendChild(thesisShape);
+
       thesisContainerFront.appendChild(thesisLinkHTML);
 
       grid.appendChild(cardContainer);
 
       thesisContainerMain.appendChild(thesisContainerFront);
       thesisContainerMain.appendChild(thesisContainerBack);
-
-      // document
-      //   .querySelector(".card > *")
-      //   .addEventListener("click", function (e) {
-      //     e.stopPropagation();
-      //     e.preventDefault();
-      //   });
     });
   })
   .then(() => {
+    // change color of shape
+    // document.querySelectorAll(".thesis-shape").forEach((shape) => {
+    //   shape.addEventListener("load", function () {
+    //     var doc = this.getSVGDocument();
+
+    //     var path = doc.querySelector("path"); // suppose our image contains a <rect>
+    //     path.setAttribute("fill", "green");
+    //   });
+    // });
+
     document.querySelectorAll(".container-card").forEach((item) => {
       item.addEventListener("click", (event) => {
         console.log(item);
