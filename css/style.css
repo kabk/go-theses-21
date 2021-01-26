@@ -26,8 +26,6 @@ TODO::
 }
 
 html {
-  border: 1px solid red;
-
   /* font-family: "Helvetica"; */
   font-family: var(--text-font), sans-serif;
   font-size: 22px;
