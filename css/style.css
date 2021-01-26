@@ -161,6 +161,90 @@ header {
   box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
 }
 
+.color-one .card-front,
+.color-one .card-back {
+  background: linear-gradient(to bottom, #f0ffde 8%, #ff8bfe 75%);
+  background-color: #defabe;
+  background-attachment: fixed;
+  box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
+}
+
+.color-one .titlecontainer h1 {
+  color: #ff8bfe;
+}
+
+.color-one .card-shade {
+  background: linear-gradient(
+    315deg,
+    rgba(215, 84, 84, 0.608) 13%,
+    rgba(195, 142, 93, 0.4598214285714286) 26%,
+    rgba(250, 235, 255, 0.5550595238095238) 37%,
+    rgba(255, 253, 173, 0.3029586834733894) 52%,
+    rgba(255, 255, 255, 0.2945553221288515) 62%,
+    rgba(235, 172, 255, 0.22452731092436973) 93%
+  );
+}
+
+.color-two .card-front,
+.color-two .card-back {
+  background: linear-gradient(to bottom, #f0ffde 8%, #8bffaa 75%);
+  background-color: #befac1;
+  background-attachment: fixed;
+  box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
+}
+
+.color-two .card-shade {
+  background: linear-gradient(
+    315deg,
+    rgba(84, 215, 91, 0.608) 13%,
+    rgba(93, 195, 141, 0.46) 26%,
+    rgba(250, 235, 255, 0.5550595238095238) 37%,
+    rgba(255, 253, 173, 0.3029586834733894) 52%,
+    rgba(255, 255, 255, 0.295) 62%,
+    rgba(172, 204, 255, 0.225) 93%
+  );
+}
+
+.color-two .titlecontainer h1 {
+  color: #23bc4c;
+}
+
+.color-two img {
+  filter: hue-rotate(180deg);
+}
+
+.color-three .card-front,
+.color-three .card-back {
+  background: linear-gradient(to bottom, #f3deff 8%, #8ba4ff 75%);
+  background-color: #bedafa;
+  background-attachment: fixed;
+  box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
+}
+
+.color-three .card-shade {
+  background: linear-gradient(
+    315deg,
+    rgba(93, 84, 215, 0.608) 13%,
+    rgba(93, 127, 195, 0.46) 26%,
+    rgba(235, 248, 255, 0.555) 37%,
+    rgba(173, 188, 255, 0.303) 52%,
+    rgba(255, 255, 255, 0.295) 62%,
+    rgba(172, 204, 255, 0.225) 93%
+  );
+}
+
+.color-three .titlecontainer h1 {
+  color: #2337bc;
+}
+
+.color-three img {
+  filter: hue-rotate(320deg);
+}
+
+/* .color-two {
+
+} */
+
 .card-front {
   display: flex;
   flex-direction: column;
