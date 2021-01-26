@@ -187,8 +187,8 @@ header {
 
 .color-two .card-front,
 .color-two .card-back {
-  background: linear-gradient(to bottom, #f0ffde 8%, #8bffaa 75%);
-  background-color: #befac1;
+  background: linear-gradient(to bottom, #ffecde 8%, #ffd18b 75%);
+  background-color: #ffe600;
   background-attachment: fixed;
   box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
 }
@@ -196,21 +196,21 @@ header {
 .color-two .card-shade {
   background: linear-gradient(
     315deg,
-    rgba(84, 215, 91, 0.608) 13%,
-    rgba(93, 195, 141, 0.46) 26%,
+    rgba(255, 106, 0, 0.608) 13%,
+    rgba(195, 180, 93, 0.46) 26%,
     rgba(250, 235, 255, 0.5550595238095238) 37%,
-    rgba(255, 253, 173, 0.3029586834733894) 52%,
+    rgba(255, 203, 173, 0.303) 52%,
     rgba(255, 255, 255, 0.295) 62%,
     rgba(172, 204, 255, 0.225) 93%
   );
 }
 
 .color-two .titlecontainer h1 {
-  color: #23bc4c;
+  color: #ffc800;
 }
 
 .color-two img {
-  filter: hue-rotate(180deg);
+  filter: hue-rotate(70deg);
 }
 
 .color-three .card-front,
