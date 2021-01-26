@@ -93,11 +93,11 @@ fetch(url)
     //   });
     // });
 
-    let colorChoices = ["color-one", "color-two", "color-three"];
+    // let colorChoices = ["color-one", "color-two", "color-three"];
 
-    colorTheme = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+    // colorTheme = colorChoices[Math.floor(Math.random() * colorChoices.length)];
 
-    document.body.classList.add(colorTheme);
+    // document.body.classList.add(colorTheme);
 
     document.querySelectorAll(".container-card").forEach((item) => {
       item.addEventListener("click", (event) => {

@@ -161,6 +161,7 @@ header {
   box-shadow: inset 0px 0px 6vh 0.5vh #d5e5ff;
 }
 
+/* I made these color options... I treid it out and it doesnt look so great:D maybe we keep it simple... */
 .color-one .card-front,
 .color-one .card-back {
   background: linear-gradient(to bottom, #f0ffde 8%, #ff8bfe 75%);
