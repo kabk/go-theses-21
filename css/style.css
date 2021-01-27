@@ -9,16 +9,12 @@ TODO::
 
 :root {
   --card-height: 22rem;
-  --card-width: 15rem;
+  --card-width: 14rem;
   --text-font: "Helvetica";
 }
 
 * {
   box-sizing: border-box;
-}
-
-.person-shape svg {
-  fill: yellow;
 }
 
 html {
@@ -29,11 +25,10 @@ html {
 }
 
 body {
-  padding: 1em;
+  /* padding: 1em; */
 }
 
 nav {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -78,6 +73,7 @@ header {
 }
 
 .grid-container {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -338,6 +334,7 @@ footer {
   text-align: center;
   margin: auto;
   margin-bottom: 5rem;
+  width: 90%;
 }
 
 @keyframes blink {
@@ -360,6 +357,10 @@ footer {
     margin-bottom: 1rem;
   }
 
+  .card-front h3 {
+    font-size: 0.9rem;
+  }
+
   .titlecontainer {
     flex-direction: column;
     text-align: center;
@@ -377,5 +378,11 @@ footer {
 
   .titlecontainer img:nth-child(3) {
     order: 3;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-front__middle {
+    height: 12em;
   }
 }
