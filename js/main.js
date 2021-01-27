@@ -107,8 +107,6 @@ fetch(url)
 
     document.querySelectorAll(".container-card").forEach((item) => {
       item.addEventListener("click", (event) => {
-        console.log(item);
-
         item.querySelector(".card").classList.toggle("is-flipped");
         //handle click
       });
