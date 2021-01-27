@@ -50,7 +50,7 @@ fetch(url)
 
       thesisImage.setAttribute(
         "style",
-        `-webkit-mask: url('${ShapePath}') no-repeat center;`
+        `-webkit-mask: url(${ShapePath}) no-repeat center;`
       );
 
       // FULL NAME h2
