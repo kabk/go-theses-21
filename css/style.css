@@ -265,11 +265,34 @@ header {
   overflow: hidden;
 }
 
-.thesis-shape {
+.thesis-shape,
+.thesis-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.thesis-shape {
   pointer-events: none;
+}
+
+.thesis-shape:hover {
+  opacity: 0;
+}
+
+.thesis-image {
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  object-fit: cover;
+  /* -webkit-mask: url("/media/shapes/shape_ada_popovic.svg") no-repeat center;
+  mask: url("/media/shapes/shape_ada_popovic.svg") no-repeat center; */
+}
+
+.thesis-image:hover {
+  opacity: 1;
 }
 
 .card-back {

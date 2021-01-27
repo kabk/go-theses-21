@@ -13,6 +13,7 @@ fetch(url)
         "Thesis Title": title = "[no title]",
         Abstract: abstract = "[no abstract]",
         ShapePath = "[no path]",
+        ImgPath = "[no path]",
       } = entry;
 
       title === "" ? (title = "No Title :(") : 0;
@@ -41,6 +42,16 @@ fetch(url)
       let thesisShape = document.createElement("object");
       thesisShape.className = "thesis-shape";
       thesisShape.setAttribute("data", ShapePath);
+
+      // Create image container for shape Path
+      let thesisImage = document.createElement("img");
+      thesisImage.className = "thesis-image";
+      thesisImage.setAttribute("src", ImgPath);
+
+      thesisImage.setAttribute(
+        "style",
+        `-webkit-mask: url('/${ShapePath}') no-repeat center;`
+      );
 
       // FULL NAME h2
       let fullName = document.createTextNode(`${firstName} ${lastName}`); // Create a text node
@@ -74,6 +85,11 @@ fetch(url)
       thesisContainerBack.appendChild(thesisAbstractHTML);
       middleDiv.appendChild(thesisShape);
 
+      middleDiv.appendChild(thesisImage);
+
+      //       -webkit-mask: url(logo.svg) no-repeat center;
+      // mask: url(logo.svg) no-repeat center;
+
       thesisContainerFront.appendChild(thesisLinkHTML);
 
       grid.appendChild(cardContainer);
@@ -83,16 +99,6 @@ fetch(url)
     });
   })
   .then(() => {
-    // change color of shape
-    // document.querySelectorAll(".thesis-shape").forEach((shape) => {
-    //   shape.addEventListener("load", function () {
-    //     var doc = this.getSVGDocument();
-
-    //     var path = doc.querySelector("path"); // suppose our image contains a <rect>
-    //     path.setAttribute("fill", "green");
-    //   });
-    // });
-
     // let colorChoices = ["color-one", "color-two", "color-three"];
 
     // colorTheme = colorChoices[Math.floor(Math.random() * colorChoices.length)];
