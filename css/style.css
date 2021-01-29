@@ -344,6 +344,15 @@ footer {
   width: 90%;
 }
 
+.insta-link {
+  color: black;
+  font-family: "Press Start 2P";
+  font-size: 0.75em;
+  position: relative;
+  top: 0.1em;
+  letter-spacing: -0.01rem;
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
