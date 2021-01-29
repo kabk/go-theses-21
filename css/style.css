@@ -110,7 +110,7 @@ header {
 
 .card.is-flipped .thesis-shape,
 .card.is-flipped .thesis-image {
-  display: none;
+  pointer-events: none;
 }
 
 .is-flipped .card-shade {
