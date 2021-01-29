@@ -108,6 +108,11 @@ header {
   transform: rotateY(180deg);
 }
 
+.card.is-flipped .thesis-shape,
+.card.is-flipped .thesis-image {
+  display: none;
+}
+
 .is-flipped .card-shade {
   display: none;
 }
@@ -264,7 +269,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: all;
+  pointer-events: visible;
 }
 
 .thesis-shape:hover {
